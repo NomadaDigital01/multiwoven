@@ -1,0 +1,14 @@
+# railway.toml
+
+[build]
+builder = "nixpacks"
+
+[[services]]
+name = "ui"
+rootDir = "ui"
+startup = "node server.js"
+
+[[services]]
+name = "server"
+rootDir = "server"
+startup = "bundle exec rails server -b 0.0.0.0 -p $PORT"
