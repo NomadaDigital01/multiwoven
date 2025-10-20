@@ -19,7 +19,4 @@ test:
 
 production:
   <<: *default
-  host: <%= ENV['DB_HOST'] %> 
-  username: <%= ENV['DB_USERNAME'] %> 
-  password: <%= ENV['DB_PASSWORD'] %>
-  database: <%= ENV.fetch("DB_NAME") { "multiwoven_server_production" } %>
+  url: <%= ENV['DATABASE_URL'] %>
