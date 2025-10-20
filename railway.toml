@@ -1,14 +1,13 @@
 # railway.toml
 
-[build]
-builder = "nixpacks"
-
 [[services]]
 name = "ui"
 rootDir = "ui"
-startup = "node server.js"
+buildCommand = "npm install && npm run build"
+startCommand = "node server.js"
 
 [[services]]
 name = "server"
 rootDir = "server"
-startup = "bundle exec rails server -b 0.0.0.0 -p $PORT"
+buildCommand = "bundle install"
+startCommand = "bundle exec rails server -b 0.0.0.0 -p $PORT"
